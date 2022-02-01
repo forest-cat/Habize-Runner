@@ -21,8 +21,6 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private GameObject myChunk_10;
     [SerializeField] private GameObject myChunk_11;
     
-    
-
 
     [SerializeField] private Transform generationPoint;
     [SerializeField] private int distanceBetweenMin;
