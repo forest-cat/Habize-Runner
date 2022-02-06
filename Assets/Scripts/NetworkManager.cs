@@ -42,7 +42,7 @@ public class NetworkManager : MonoBehaviour
     }
     public void Spawn()
     {
-        PhotonNetwork.Instantiate("Player_1",new Vector3(-9.19f, -1.67f, 0), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate("Player_2",new Vector3(-9.19f, -1.67f, 0), Quaternion.identity, 0);
     }
     
 
