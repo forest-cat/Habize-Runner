@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class NetworkManager : MonoBehaviour
 {
     //Method for Server Connection
-
+    private string selectedPlayerName = "Player_2";
     
 
     public void Connect()
@@ -42,7 +42,9 @@ public class NetworkManager : MonoBehaviour
     }
     public void Spawn()
     {
-        PhotonNetwork.Instantiate("Player_2",new Vector3(-9.19f, -1.67f, 0), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(selectedPlayerName, new Vector3(-9.19f, -1.67f, 0), Quaternion.identity, 0);
+        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
+        PlayerPrefs.Save();
     }
     
 

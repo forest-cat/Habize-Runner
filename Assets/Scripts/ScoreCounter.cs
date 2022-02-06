@@ -18,7 +18,8 @@ public class ScoreCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player = GameObject.Find("Player_1(Clone)").transform;
+        string selectedPlayerName = PlayerPrefs.GetString("selectedPlayerName");
+        player = GameObject.Find(selectedPlayerName + "(Clone)").transform;
         float score = player.position.x - transform.position.x;
         scoreDisplay.text = "" + Math.Round(score);
     }

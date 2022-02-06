@@ -568,6 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c76fad24801f0748ae6c95e7669e819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpeed: 0.25
 --- !u!23 &845438907
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -994,7 +995,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17952378, y: 0.09777997}
   m_AnchorMax: {x: 0.82100004, y: 0.41188997}
-  m_AnchoredPosition: {x: -0.098358184, y: 0.052490234}
+  m_AnchoredPosition: {x: -0.09838867, y: 0.052490234}
   m_SizeDelta: {x: -0.57672125, y: 0.10498047}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542523260
@@ -1229,7 +1230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17484127, y: 0.585555}
   m_AnchorMax: {x: 0.81631756, y: 0.90222496}
-  m_AnchoredPosition: {x: -0.19335938, y: -0.105903625}
+  m_AnchoredPosition: {x: -0.19335938, y: -0.105895996}
   m_SizeDelta: {x: -0.38671875, y: 0.21179199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1828230714

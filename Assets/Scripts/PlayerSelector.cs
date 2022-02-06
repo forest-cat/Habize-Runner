@@ -16,6 +16,7 @@ public class PlayerSelector : MonoBehaviour
 
     void Update()
     {
-        vcam.Follow = GameObject.Find("Player_1(Clone)").transform;
+        string selectedPlayerName = PlayerPrefs.GetString("selectedPlayerName");
+        vcam.Follow = GameObject.Find(selectedPlayerName + "(Clone)").transform;
     }
 }
