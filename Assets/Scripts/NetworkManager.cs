@@ -42,6 +42,45 @@ public class NetworkManager : MonoBehaviour
         Connect();
     }
 
+    public void Player_5()
+    {
+        selectedPlayerName = "Player_5";
+        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
+        PlayerPrefs.Save();
+        Connect();
+    }
+
+    public void Player_6()
+    {
+        selectedPlayerName = "Player_6";
+        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
+        PlayerPrefs.Save();
+        Connect();
+    }
+    public void Player_7()
+    {
+        selectedPlayerName = "Player_7";
+        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
+        PlayerPrefs.Save();
+        Connect();
+    }
+
+    public void Player_8()
+    {
+        selectedPlayerName = "Player_8";
+        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
+        PlayerPrefs.Save();
+        Connect();
+    }
+
+    public void Player_9()
+    {
+        selectedPlayerName = "Player_9";
+        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
+        PlayerPrefs.Save();
+        Connect();
+    }
+
 
     public void Connect()
     {
