@@ -11,7 +11,10 @@ public class GameManager : MonoBehaviour
     private string playerName;
     private int counter = 0;
 
-
+    public void LoadCharacterMenu()
+    {
+        SceneManager.LoadScene("CharacterSelection");
+    }
 
     void Start()
     {

@@ -7,8 +7,41 @@ using UnityEngine.UI;
 public class NetworkManager : MonoBehaviour
 {
     //Method for Server Connection
-    private string selectedPlayerName = "Player_2";
-    
+    private string selectedPlayerName;
+
+
+    public void Player_1()
+    {
+        selectedPlayerName = "Player_1";
+        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
+        PlayerPrefs.Save();
+        Connect();
+    }
+
+    public void Player_2()
+    {
+        selectedPlayerName = "Player_2";
+        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
+        PlayerPrefs.Save();
+        Connect();
+    }
+
+    public void Player_3()
+    {
+        selectedPlayerName = "Player_3";
+        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
+        PlayerPrefs.Save();
+        Connect();
+    }
+
+    public void Player_4()
+    {
+        selectedPlayerName = "Player_4";
+        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
+        PlayerPrefs.Save();
+        Connect();
+    }
+
 
     public void Connect()
     {
@@ -24,8 +57,8 @@ public class NetworkManager : MonoBehaviour
 
     void OnJoinedLobby()
     {
-        Debug.Log("Joined Lobby");
         // Random Raum betreten
+        Debug.Log("Joined Lobby");
         PhotonNetwork.JoinRandomRoom();
         
         
@@ -33,6 +66,7 @@ public class NetworkManager : MonoBehaviour
     
     void OnPhotonRandomJoinFailed()
     {
+        Debug.Log("Failed to Join Room");
         PhotonNetwork.CreateRoom(null);
     }
 
@@ -42,9 +76,8 @@ public class NetworkManager : MonoBehaviour
     }
     public void Spawn()
     {
-        PhotonNetwork.Instantiate(selectedPlayerName, new Vector3(-9.19f, -1.67f, 0), Quaternion.identity, 0);
-        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
-        PlayerPrefs.Save();
+        string selectedPlayerNameLoc = PlayerPrefs.GetString("selectedPlayerName");
+        PhotonNetwork.Instantiate(selectedPlayerNameLoc, new Vector3(-9.19f, -1.67f, 0), Quaternion.identity, 0);
     }
     
 
