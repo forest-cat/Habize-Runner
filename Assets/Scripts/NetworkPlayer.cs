@@ -16,10 +16,14 @@ public class NetworkPlayer : Photon.MonoBehaviour
     private GameObject Player;
     private float pos;
     private PhotonView PV;
+    private float old_pos_x;
     private int useSeed;
     private int seed;
     private GameObject scoreCounter;
     private float score;
+    private Vector2 temp;
+    private GameObject BGText;
+    
     
 
     Rigidbody2D rb;
@@ -44,6 +48,7 @@ public class NetworkPlayer : Photon.MonoBehaviour
             //PhotonNetwork.player.NickName = "Testos";
             nameText.text = photonView.owner.NickName;
             //nametext.text = "Hello";
+
         }
 
         seed = UnityEngine.Random.Range(1, 999999);
@@ -74,10 +79,16 @@ public class NetworkPlayer : Photon.MonoBehaviour
         
         if (useSeed != 0)
         {
-            Debug.Log("The SEED i generated: " + seed.ToString());
+            //Debug.Log("The SEED i generated: " + seed.ToString());
             //Debug.Log("The SEED we will use: " + useSeed.ToString());
             LevelGenerator.GetComponent<LevelGenerator>().genSeed = useSeed;
         }
+        if (!photonView.isMine)
+        {
+            BGText = transform.GetChild(1).transform.GetChild(1).transform.GetChild(0).gameObject;
+        }
+
+        old_pos_x = transform.position.x;
 
     }
 
@@ -85,13 +96,37 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
     void Update()
     {
+        
+        if (!photonView.isMine)
+        {
+
+            if (old_pos_x > transform.position.x)
+            {
+                //Flips the Player into the direction he is walking
+                transform.localScale = new Vector2(-1, 1);
+                //BGText.transform.localScale = BGText.transform.localScale + new Vector3(-2, 0);
+            }
+            else if (old_pos_x < transform.position.x)
+            {
+                //Flips the Player into the direction he is walking
+                transform.localScale = new Vector2(1, 1);
+                //BGText.transform.localScale = BGText.transform.localScale + new Vector3(2, 0);
+            }
+            
+            Debug.Log("hahhshdsfgsdhhfjsdghjf");
+        }
+        
+
+        //Setting old_pos_x to the current x position
+        old_pos_x = transform.position.x;
+
 
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject p in players)
         {
             if (!photonView.isMine)
             {
-                Debug.Log(p.GetPhotonView().owner.NickName.ToString() + ": " + p.transform.position.x.ToString());
+                //Debug.Log(p.GetPhotonView().owner.NickName.ToString() + ": " + p.transform.position.x.ToString());
                 score = p.transform.position.x - scoreCounter.transform.position.x;
                 if (p.transform.position.x == transform.position.x)
                 {
@@ -146,7 +181,6 @@ public class NetworkPlayer : Photon.MonoBehaviour
                 }
                 */
             }
-
 
     }
     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
