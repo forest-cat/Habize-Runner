@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 6195872791597648125}
   - component: {fileID: -4416812502737319993}
   - component: {fileID: -4650417038464707324}
+  - component: {fileID: -2171294602152992370}
   m_Layer: 8
   m_Name: Player_2
   m_TagString: Player
@@ -475,9 +476,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6195872791597648119}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5809fa71aa163ad4b95495703e41032b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0c32b68223970a94b9b30564f93e94fd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -525,6 +526,7 @@ MonoBehaviour:
   ownershipTransfer: 0
   ObservedComponents:
   - {fileID: -4650417038464707324}
+  - {fileID: -2171294602152992370}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -543,6 +545,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 5050958988051707476}
+--- !u!114 &-2171294602152992370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6195872791597648119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: Player_State
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &8299336318437494344
 GameObject:
   m_ObjectHideFlags: 0

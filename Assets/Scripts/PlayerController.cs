@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
     private State state = State.idle;
     private bool moveLeft;
     private bool moveRight;
-    private float oldPosition;
+    private float oldPosition = 0;
     private float time = 0.05f;
     private float timer = 2;
     private GameObject leftButton;
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        oldPosition = transform.position.x;
+        
         Movement();
 
         VelocityCheck();
@@ -113,6 +113,8 @@ public class PlayerController : MonoBehaviour {
 
             counter_num++;
         }
+        oldPosition = transform.position.x;
+        Debug.Log((int)state);
     }
 
     private void Movement()
@@ -122,14 +124,14 @@ public class PlayerController : MonoBehaviour {
         {
             state = State.run;
             //Flips the Player into the direction he is walking
-            //transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(1, 1);
             transform.position += new Vector3(1, 0, 0) * Time.deltaTime * speed;
         }
         else if (movement < 0 || moveLeft)
         {
             state = State.run;
             //Flips the Player into the direction he is walking
-            //transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector2(-1, 1);
             transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * speed;
         }
 
@@ -196,4 +198,5 @@ public class PlayerController : MonoBehaviour {
         }
         
     }
+    
 }

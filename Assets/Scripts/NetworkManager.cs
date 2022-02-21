@@ -80,6 +80,20 @@ public class NetworkManager : MonoBehaviour
         PlayerPrefs.Save();
         Connect();
     }
+    public void Player_10()
+    {
+        selectedPlayerName = "Player_10";
+        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
+        PlayerPrefs.Save();
+        Connect();
+    }
+    public void Player_11()
+    {
+        selectedPlayerName = "Player_11";
+        PlayerPrefs.SetString("selectedPlayerName", selectedPlayerName);
+        PlayerPrefs.Save();
+        Connect();
+    }
 
 
     public void Connect()

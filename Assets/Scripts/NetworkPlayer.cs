@@ -95,7 +95,7 @@ public class NetworkPlayer : Photon.MonoBehaviour
                 score = p.transform.position.x - scoreCounter.transform.position.x;
                 if (p.transform.position.x == transform.position.x)
                 {
-                    nameText.text = "[" + Math.Round(score).ToString() + "]" + p.GetPhotonView().owner.NickName.ToString();
+                    nameText.text = Math.Round(score).ToString() + " " + p.GetPhotonView().owner.NickName.ToString();
                 }
                 
             }
