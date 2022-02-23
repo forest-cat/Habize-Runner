@@ -113,7 +113,6 @@ public class NetworkPlayer : Photon.MonoBehaviour
                 //BGText.transform.localScale = BGText.transform.localScale + new Vector3(2, 0);
             }
             
-            Debug.Log("hahhshdsfgsdhhfjsdghjf");
         }
         
 
