@@ -1,8 +1,6 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp-Editor.dll:
-    - PhotonAnimatorViewEditor
-    - PhotonViewInspector
     - PunSceneSettings
     Assembly-CSharp.dll:
     - AudioRpc
@@ -84,8 +82,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -2088,4 +2088,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Multiplayer.unity
   - Assets/Scenes/Singleplayer.unity
   - Assets/Scenes/CharacterSelection.unity
-  playerPath: D:/Bibliotheken/Desktop/MyGame/MyGame-v1.4.apk
+  playerPath: D:/Bibliotheken/Desktop/MyGame/MyGame-v1.5-Custom-Build-for-Marcel.apk
