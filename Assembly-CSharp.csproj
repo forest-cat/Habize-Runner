@@ -116,6 +116,7 @@
     <Compile Include="Assets\Auto Letterbox\Util.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\PhotonPlayer\PlayerRoomIndexing.cs" />
+    <Compile Include="Assets\Scripts\changeRotationOnText.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\NetworkingPeer.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\DemoChangeOwner\HighlightOwnedGameObj.cs" />
     <Compile Include="Assets\PhotonChatApi\ChatDisconnectCause.cs" />
@@ -219,7 +220,6 @@
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnStartDelete.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\PunBasics-Tutorial\Scripts\CameraWork.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
-    <Compile Include="Assets\Scripts\changeRotationOnText.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

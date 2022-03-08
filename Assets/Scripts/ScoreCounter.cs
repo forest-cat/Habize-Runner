@@ -22,5 +22,10 @@ public class ScoreCounter : MonoBehaviour
         player = GameObject.Find(selectedPlayerName + "(Clone)").transform;
         float score = player.position.x - transform.position.x;
         scoreDisplay.text = "" + Math.Round(score);
+
+        if (Math.Round(score) < 0)
+        {
+            scoreDisplay.text = "0";
+        }
     }
 }
