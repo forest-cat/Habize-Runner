@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            playerName = PlayerPrefs.GetString("PlayerName");
+            playerName = PlayerPrefs.GetString("PlayerName").Substring(0, 20);
             playerNameInputField.text = playerName;
             PhotonNetwork.player.NickName = playerName;
             Debug.Log("PlayerName in Field set to: " + playerName);
@@ -54,6 +54,11 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.Save();
                 PhotonNetwork.player.NickName = playerNameInputField.text;
             }
+        }
+
+        if (playerNameInputField.text.Length > 20)
+        {
+            playerNameInputField.text = playerNameInputField.text.Substring(0, 20);
         }
     }
 }

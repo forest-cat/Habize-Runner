@@ -37,6 +37,7 @@ ScriptsOnlyBuild:
     - PhotonView
     - PickupCamera
     - PickupController
+    - PlatformMoving
     - PlayerController
     - PlayerDiamond
     - PlayerSelector
@@ -82,10 +83,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -422,6 +421,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 6032}
     - Class: 114
       Script: {instanceID: 6384}
+    - Class: 114
+      Script: {instanceID: 32562}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -530,16 +531,16 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: ae83e830e7a90c0aff918c4c2e520825
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: GraphicRaycaster
-  - hash:
-      serializedVersion: 2
       Hash: a6e561615949734e9f12f9b61661f43e
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: ae83e830e7a90c0aff918c4c2e520825
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GraphicRaycaster
   - hash:
       serializedVersion: 2
       Hash: 699619b86d9359741a4f58540298c80b
@@ -2082,6 +2083,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Demo2DJumpAndRun
+  - hash:
+      serializedVersion: 2
+      Hash: e4a3f43559d05651250f8bac11e7c6e7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlatformMoving
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
