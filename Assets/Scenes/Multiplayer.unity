@@ -622,7 +622,7 @@ MonoBehaviour:
   myChunk_2: {fileID: 4800059302683508474, guid: 47105e5d43d074a4ca5545c97cba6569, type: 3}
   myChunk_3: {fileID: 4800059302683508474, guid: 9b01b5a79597ace4ab42854e6697f6c3, type: 3}
   myChunk_4: {fileID: 4800059302683508474, guid: fc26713422396bf4fbfc1b32c2dedad3, type: 3}
-  myChunk_5: {fileID: 0}
+  myChunk_5: {fileID: 2403468907264945825, guid: fdb9d98c06b8841409bdaa6356f27ceb, type: 3}
   myChunk_6: {fileID: 0}
   myChunk_7: {fileID: 0}
   myChunk_8: {fileID: 0}
