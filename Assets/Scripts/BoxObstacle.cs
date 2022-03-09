@@ -14,7 +14,7 @@ public class BoxObstacle : Photon.MonoBehaviour
         if (!photonView.isMine)
         {
             rb = GetComponent<Rigidbody2D>();
-            Destroy(rb);
+            //Destroy(rb);
         }
         
     }

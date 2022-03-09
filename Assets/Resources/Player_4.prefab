@@ -560,6 +560,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 5050958988051707476}
+  Zone:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &-5248492172290213711
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -46,14 +46,17 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        
         if (coll.IsTouchingLayers(Zone))
         {
             PlayerPrefs.SetString("isDead", "true");
             PlayerPrefs.Save();
             Destroy(gameObject);
+            PhotonNetwork.Disconnect();
             GetComponent<PlayerController>().enabled = false;
         }
         
+
         Movement();
 
         VelocityCheck();
@@ -71,6 +74,7 @@ public class PlayerController : MonoBehaviour {
             PlayerPrefs.SetString("isDead", "true");
             PlayerPrefs.Save();
             Destroy(gameObject);
+            PhotonNetwork.Disconnect();
             GetComponent<PlayerController>().enabled = false;
         }
         

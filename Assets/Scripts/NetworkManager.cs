@@ -14,6 +14,7 @@ public class NetworkManager : MonoBehaviour
     [SerializeField] private GameObject endScreenBG;
     [SerializeField] private GameObject endScreenButton;
     [SerializeField] private GameObject gameOverText;
+    [SerializeField] private GameObject gameWonText;
     [SerializeField] private GameObject controlsUI;
     [SerializeField] private GameObject FPSCounter;
 
@@ -118,7 +119,6 @@ public class NetworkManager : MonoBehaviour
     void OnJoinedRoom()
     {
         Spawn();
-        Debug.Log("OnJoinedRoom was run");
     }
     public void Spawn()
     {
@@ -141,8 +141,10 @@ public class NetworkManager : MonoBehaviour
         endScreenBG.SetActive(false);
         endScreenButton.SetActive(false);
         gameOverText.SetActive(false);
+        gameWonText.SetActive(false);
         PlayerPrefs.SetString("isStarted", "false");
         PlayerPrefs.SetString("isDead", "false");
+        PlayerPrefs.SetString("hasWon", "false");
         PlayerPrefs.Save();
     }
 
@@ -153,7 +155,7 @@ public class NetworkManager : MonoBehaviour
             startBarrier.SetActive(false);
         }
 
-        if (PlayerPrefs.GetString("isDead") == "true")
+        if (PlayerPrefs.GetString("isDead") == "true" && PlayerPrefs.GetString("hasWon") == "false")
         {
             endScreenBG.SetActive(true);
             endScreenButton.SetActive(true);
@@ -161,6 +163,16 @@ public class NetworkManager : MonoBehaviour
             controlsUI.SetActive(false);
             FPSCounter.SetActive(false);
         }
+
+        if (PlayerPrefs.GetString("hasWon") == "true")
+        {
+            endScreenBG.SetActive(true);
+            endScreenButton.SetActive(true);
+            gameWonText.SetActive(true);
+            controlsUI.SetActive(false);
+            FPSCounter.SetActive(false);
+        }
+
 
         if (PlayerPrefs.GetString("isMaster") == "true" && PlayerPrefs.GetString("isStarted") == "false")
         {

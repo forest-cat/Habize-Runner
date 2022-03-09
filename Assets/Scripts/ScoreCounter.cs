@@ -30,8 +30,31 @@ public class ScoreCounter : MonoBehaviour
                 scoreDisplay.text = "0";
 
             }
-            
-                
+
+            if (Math.Round(score) > 1000)
+            {
+                PlayerPrefs.SetString("hasWon", "true");
+                PlayerPrefs.SetString("isDead", "true");
+                PlayerPrefs.Save();
+
+            }
+
+            if (PhotonNetwork.otherPlayers.Length < 1)
+            {
+                Debug.Log("All Players left");
+                PlayerPrefs.SetString("hasWon", "true");
+                PlayerPrefs.Save();
+            }
+
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+            if (players.Length == 1)
+            {
+                Debug.Log("All Players Died");
+                PlayerPrefs.SetString("hasWon", "true");
+                PlayerPrefs.Save();
+            }
+
 
             if (playerCount.text != "")
             {

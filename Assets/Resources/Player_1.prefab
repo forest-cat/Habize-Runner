@@ -558,6 +558,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 5050958988051707476}
+  coll: {fileID: 6195872791597648118}
+  Zone:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8439178152693179471
 GameObject:
   m_ObjectHideFlags: 0

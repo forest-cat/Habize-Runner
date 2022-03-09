@@ -61,6 +61,7 @@
     <Compile Include="Assets\Photon Unity Networking\Demos\DemoHub\HubGui.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\PunBasics-Tutorial\Scripts\PlayerUI.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\DemoBoxes\ColorPerPlayer.cs" />
+    <Compile Include="Assets\Scripts\NetworkManager2.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\DemoWorker\Scripts\WorkerMenu.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\AudioRpc.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PingCloudRegions.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ShowStatusWhenConnecting.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\DemoRPGMovement\Scripts\RPGMovement.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\ConnectAndJoinRandom.cs" />
+    <Compile Include="Assets\Scripts\BoxObstacle.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\DemoSynchronization\IELdemo.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Views\PhotonRigidbody2DView.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -202,6 +204,7 @@
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\PhotonStatsGui.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\DemoChangeOwner\ShowInfoOfPlayer.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\DemoMecanim\Scripts\DemoMecanimGUI.cs" />
+    <Compile Include="Assets\Scripts\ZoneWalllBehavior.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\DemoChangeOwner\MaterialPerOwner.cs" />
     <Compile Include="Assets\PhotonChatApi\ChatPeer.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
@@ -221,9 +224,7 @@
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\OnStartDelete.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\PunBasics-Tutorial\Scripts\CameraWork.cs" />
     <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
-    <Compile Include="Assets\Scripts\NetworkManager2.cs" />
-    <Compile Include="Assets\Scripts\ZoneWalllBehavior.cs" />
-    <Compile Include="Assets\Scripts\BoxObstacle.cs" />
+    <Compile Include="Assets\Scripts\PlayerLayerCheck.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -5,10 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class NetworkPlayer : Photon.MonoBehaviour
 {
-    [SerializeField]private Text nameText;
+    [SerializeField] private Text nameText;
+    [SerializeField] private Collider2D coll;
 
     private Vector3 correctPlayerPos;
     private Quaternion correctPlayerRot;
@@ -24,10 +26,12 @@ public class NetworkPlayer : Photon.MonoBehaviour
     private Vector2 temp;
     private GameObject BGText;
     private bool ranOnce = false;
+    [SerializeField] private LayerMask Zone;
 
 
 
     Rigidbody2D rb;
+    
 
     [PunRPC]
     void Setting(int sharedSeed)
@@ -54,14 +58,8 @@ public class NetworkPlayer : Photon.MonoBehaviour
     }
 
 
-
-
-
-
     void Start()
     {
-        
-
         scoreCounter = GameObject.Find("ScoreCounter");
         if (!photonView.isMine)
         {
@@ -118,6 +116,12 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
     void Update()
     {
+        
+        if (PlayerPrefs.GetString("isDead") == "true" || PlayerPrefs.GetString("hasWon") == "true")
+        {
+            Destroy(gameObject);
+        }
+
         if (PlayerPrefs.GetString("isStarted") == "true" && !ranOnce)
         {
             PV = GetComponent<PhotonView>();
@@ -159,9 +163,25 @@ public class NetworkPlayer : Photon.MonoBehaviour
                 score = p.transform.position.x - scoreCounter.transform.position.x;
                 if (p.transform.position.x == transform.position.x)
                 {
+                    if (Math.Round(score) < 0)
+                    {
+                        score = 0;
+
+                    }
                     nameText.text = "{" + Math.Round(score).ToString() + "} " + p.GetPhotonView().owner.NickName.ToString();
+                    
+                    if (score >= 1000)
+                    {
+                        PlayerPrefs.SetString("hasWon", "false");
+                        PlayerPrefs.SetString("isDead", "true");
+                        PlayerPrefs.Save();
+                        Debug.Log("Another Player wins!!!");
+                    }
                 }
+       
                 
+
+
             }
 
         }
