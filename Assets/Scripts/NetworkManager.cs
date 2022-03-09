@@ -8,8 +8,20 @@ public class NetworkManager : MonoBehaviour
 {
     //Method for Server Connection
     private string selectedPlayerName;
+    public bool isStarted = false;
+    [SerializeField] private GameObject startGameButton;
+    [SerializeField] private GameObject startBarrier;
+    [SerializeField] private GameObject endScreenBG;
+    [SerializeField] private GameObject endScreenButton;
+    [SerializeField] private GameObject gameOverText;
+    [SerializeField] private GameObject controlsUI;
+    [SerializeField] private GameObject FPSCounter;
 
-
+    public void BackToMenu()
+    {
+        PhotonNetwork.Disconnect();
+        SceneManager.LoadScene("MainMenu");
+    }
     public void Player_1()
     {
         selectedPlayerName = "Player_1";
@@ -98,46 +110,71 @@ public class NetworkManager : MonoBehaviour
 
     public void Connect()
     {
-        PhotonNetwork.ConnectUsingSettings("v1.3");
-        SceneManager.LoadScene("Multiplayer");
+        SceneManager.LoadScene("RoomList");
     }
 
-    void OnConnectedToMaster()
-    {
-        Debug.Log("Connected to Masterserver");
-        PhotonNetwork.JoinLobby();
-    }
-
-    void OnJoinedLobby()
-    {
-        // Random Raum betreten
-        Debug.Log("Joined Lobby");
-        PhotonNetwork.JoinRandomRoom();
-        
-        
-    }
     
-    void OnPhotonRandomJoinFailed()
-    {
-        Debug.Log("Failed to Join Room");
-        PhotonNetwork.CreateRoom(null);
-    }
 
     void OnJoinedRoom()
     {
         Spawn();
+        Debug.Log("OnJoinedRoom was run");
     }
     public void Spawn()
     {
         string selectedPlayerNameLoc = PlayerPrefs.GetString("selectedPlayerName");
         PhotonNetwork.Instantiate(selectedPlayerNameLoc, new Vector3(-9.19f, -1.67f, 0), Quaternion.identity, 0);
     }
-    
+
+    public void StartGame()
+    {
+        isStarted = true;
+        PlayerPrefs.SetString("isStarted", "true");
+        PlayerPrefs.Save();
+        startGameButton.SetActive(false);
+    }
+
+    void Start()
+    {
+        isStarted = false;
+        startGameButton.SetActive(false);
+        endScreenBG.SetActive(false);
+        endScreenButton.SetActive(false);
+        gameOverText.SetActive(false);
+        PlayerPrefs.SetString("isStarted", "false");
+        PlayerPrefs.SetString("isDead", "false");
+        PlayerPrefs.Save();
+    }
 
     void Update()
-    { 
+    {
+        if (PlayerPrefs.GetString("isStarted") == "true")
+        {
+            startBarrier.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetString("isDead") == "true")
+        {
+            endScreenBG.SetActive(true);
+            endScreenButton.SetActive(true);
+            gameOverText.SetActive(true);
+            controlsUI.SetActive(false);
+            FPSCounter.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetString("isMaster") == "true" && PlayerPrefs.GetString("isStarted") == "false")
+        {
+            startGameButton.SetActive(true);
+        }
+
+        if(PlayerPrefs.GetString("isStarted") == "true" || PlayerPrefs.GetString("isMaster") != "true")
+        {
+            startGameButton.SetActive(false);
+        }
+
         int Players = PhotonNetwork.otherPlayers.Length + 1;
         //Debug.Log(PhotonNetwork.connectionStateDetailed.ToString());
-        Debug.Log("Anzahl der Spieler: " + Players.ToString());
+        //Debug.Log("Anzahl der Spieler: " + Players.ToString());
     }
 }
+

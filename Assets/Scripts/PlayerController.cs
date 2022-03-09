@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour {
     private GameObject rightButton;
     private GameObject jumpButtonn;
     [SerializeField] private LayerMask Ground;
+    [SerializeField] private LayerMask Zone;
     [SerializeField] private float speed = 4f;
     [SerializeField] private float jump = 15f;
     private int counter_num = 0;
@@ -45,6 +46,13 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (coll.IsTouchingLayers(Zone))
+        {
+            PlayerPrefs.SetString("isDead", "true");
+            PlayerPrefs.Save();
+            Destroy(gameObject);
+            GetComponent<PlayerController>().enabled = false;
+        }
         
         Movement();
 
@@ -59,9 +67,11 @@ public class PlayerController : MonoBehaviour {
         }
         if (SceneManager.GetActiveScene().name == "Multiplayer" && transform.position.y < -12)
         {
-            
-            PhotonNetwork.Disconnect();
-            SceneManager.LoadScene("MainMenu");
+
+            PlayerPrefs.SetString("isDead", "true");
+            PlayerPrefs.Save();
+            Destroy(gameObject);
+            GetComponent<PlayerController>().enabled = false;
         }
         
         leftButton = GameObject.Find("Left");
@@ -114,7 +124,7 @@ public class PlayerController : MonoBehaviour {
             counter_num++;
         }
         oldPosition = transform.position.x;
-        Debug.Log((int)state);
+        //Debug.Log((int)state);
     }
 
     private void Movement()

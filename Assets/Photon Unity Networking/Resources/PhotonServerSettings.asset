@@ -44,4 +44,5 @@ MonoBehaviour:
   - RequestForPickupTimes
   - TaggedPlayer
   - Setting
+  - StartGamePUN
   DisableAutoOpenWizard: 1

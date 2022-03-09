@@ -26,7 +26,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private int distanceBetweenMin;
     [SerializeField] private int distanceBetweenMax;
 
-    private GameObject[] Chunks = new GameObject[6];
+    private GameObject[] Chunks = new GameObject[5];
     private int counter = 0;
     private System.Random rand;
     private int beforeChunk;
@@ -42,7 +42,7 @@ public class LevelGenerator : MonoBehaviour
         Chunks[2] = myChunk_2 as GameObject;
         Chunks[3] = myChunk_3 as GameObject;
         Chunks[4] = myChunk_4 as GameObject;
-        Chunks[5] = myChunk_5 as GameObject;
+        //Chunks[5] = myChunk_5 as GameObject;
 
         transform.position = new Vector3(24.2f, 0, 0);
         Instantiate(Chunks[1], transform.position, Quaternion.identity);
@@ -65,7 +65,7 @@ public class LevelGenerator : MonoBehaviour
         if (transform.position.x < generationPoint.position.x)
         {
             int distanceBetween = rand.Next(distanceBetweenMin, distanceBetweenMax);
-            int randomNumber = rand.Next(0, 6);
+            int randomNumber = rand.Next(0, 5);
             platformWidth = Chunks[beforeChunk].GetComponent<BoxCollider>().size.x;
             transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, 0);
             Instantiate(Chunks[randomNumber], transform.position, Quaternion.identity);

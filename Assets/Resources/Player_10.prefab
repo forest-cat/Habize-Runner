@@ -514,6 +514,9 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 64
+  Zone:
+    serializedVersion: 2
+    m_Bits: 512
   speed: 11
   jump: 23
 --- !u!114 &-4416812502737319993

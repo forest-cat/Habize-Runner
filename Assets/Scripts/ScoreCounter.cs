@@ -8,24 +8,44 @@ public class ScoreCounter : MonoBehaviour
 {
 
     private Transform player;
+    public NetworkManager networkManager;
     [SerializeField] private Text scoreDisplay;
-    
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Text playerCount;
 
-    // Update is called once per frame
+    
+
+
     void Update()
     {
-        string selectedPlayerName = PlayerPrefs.GetString("selectedPlayerName");
-        player = GameObject.Find(selectedPlayerName + "(Clone)").transform;
-        float score = player.position.x - transform.position.x;
-        scoreDisplay.text = "" + Math.Round(score);
+        
+        if (networkManager.isStarted || PlayerPrefs.GetString("isStarted") == "true")
+        {   
+            string selectedPlayerName = PlayerPrefs.GetString("selectedPlayerName");
+            player = GameObject.Find(selectedPlayerName + "(Clone)").transform;
+            float score = player.position.x - transform.position.x;
+            scoreDisplay.text = "" + Math.Round(score);
 
-        if (Math.Round(score) < 0)
+            if (Math.Round(score) < 0)
+            {
+                scoreDisplay.text = "0";
+
+            }
+            
+                
+
+            if (playerCount.text != "")
+            {
+                playerCount.text = "";
+            }
+        }
+        else
         {
-            scoreDisplay.text = "0";
+            if (scoreDisplay.text != PlayerPrefs.GetString("RoomID"))
+            {
+                scoreDisplay.text = PlayerPrefs.GetString("RoomID");
+            }
+            int players = PhotonNetwork.otherPlayers.Length + 1;
+            playerCount.text =  players.ToString();
         }
     }
 }

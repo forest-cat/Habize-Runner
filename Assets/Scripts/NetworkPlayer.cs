@@ -23,8 +23,9 @@ public class NetworkPlayer : Photon.MonoBehaviour
     private float score;
     private Vector2 temp;
     private GameObject BGText;
-    
-    
+    private bool ranOnce = false;
+
+
 
     Rigidbody2D rb;
 
@@ -39,9 +40,28 @@ public class NetworkPlayer : Photon.MonoBehaviour
         PV.RPC("Setting", PhotonTargets.AllBuffered, seed);
     }
 
+    [PunRPC]
+    void StartGamePUN()
+    {
+        //Call here what happens after Gamestart for character
+        Vector3 tmp = transform.position;
+        tmp.x = -9.19f;
+        tmp.y = -1.67f;
+        transform.position = tmp;
+        PlayerPrefs.SetString("isStarted", "true");
+        PlayerPrefs.SetString("isDead", "false");
+        PlayerPrefs.Save();
+    }
+
+
+
+
+
 
     void Start()
     {
+        
+
         scoreCounter = GameObject.Find("ScoreCounter");
         if (!photonView.isMine)
         {
@@ -60,7 +80,9 @@ public class NetworkPlayer : Photon.MonoBehaviour
             rb = GetComponent<Rigidbody2D>();
             rb.simulated = true;
             GetComponent<PlayerController>().enabled = true;
-            
+            PlayerPrefs.SetString("isMaster", "false");
+            PlayerPrefs.Save();
+
             PV = GetComponent<PhotonView>();
             
             if (PV.owner.isMasterClient)
@@ -68,6 +90,8 @@ public class NetworkPlayer : Photon.MonoBehaviour
                 ExitGames.Client.Photon.Hashtable setValue = new ExitGames.Client.Photon.Hashtable();
                 setValue.Add("Seed", seed);
                 PhotonNetwork.room.SetCustomProperties(setValue);
+                PlayerPrefs.SetString("isMaster", "true");
+                PlayerPrefs.Save();
                 //CallSetting();
                 //Debug.Log(useSeed);
 
@@ -92,11 +116,17 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
     }
 
-   
-
     void Update()
     {
-        
+        if (PlayerPrefs.GetString("isStarted") == "true" && !ranOnce)
+        {
+            PV = GetComponent<PhotonView>();
+            PV.RPC("StartGamePUN", PhotonTargets.AllBuffered);
+
+            ranOnce = true;
+        }
+
+
         if (!photonView.isMine)
         {
 

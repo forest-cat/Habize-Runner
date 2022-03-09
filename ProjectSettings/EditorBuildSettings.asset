@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharacterSelection.unity
     guid: e587966df1a69fd4da5151bf38e6b528
+  - enabled: 1
+    path: Assets/Scenes/RoomList.unity
+    guid: 98cbbba25e8b3734d91b5728b79531c6
   m_configObjects: {}

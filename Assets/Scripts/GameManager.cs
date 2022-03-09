@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private InputField playerNameInputField;
     private string playerName;
-    private int counter = 0;
 
     public void LoadCharacterMenu()
     {
@@ -26,10 +25,21 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            playerName = PlayerPrefs.GetString("PlayerName").Substring(0, 20);
-            playerNameInputField.text = playerName;
-            PhotonNetwork.player.NickName = playerName;
-            Debug.Log("PlayerName in Field set to: " + playerName);
+            playerName = PlayerPrefs.GetString("PlayerName");
+            if (playerName.Length > 20)
+            {
+                playerName = playerName.Substring(0, 20);
+                playerNameInputField.text = playerName;
+                PhotonNetwork.player.NickName = playerName;
+                Debug.Log("PlayerName in Field set to: " + playerName);
+            }
+            else
+            {
+                playerNameInputField.text = playerName;
+                PhotonNetwork.player.NickName = playerName;
+                Debug.Log("PlayerName in Field set to: " + playerName);
+            }
+            
         }
         
     }

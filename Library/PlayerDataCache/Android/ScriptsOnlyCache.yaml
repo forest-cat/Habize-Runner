@@ -24,6 +24,7 @@ ScriptsOnlyBuild:
     - MoveByKeys
     - NetworkCharacter
     - NetworkManager
+    - NetworkManager2
     - NetworkPlayer
     - OnAwakePhysicsSettings
     - OnClickDestroy
@@ -51,6 +52,7 @@ ScriptsOnlyBuild:
     - ThirdPersonCamera
     - ThirdPersonController
     - ThirdPersonNetwork
+    - ZoneWalllBehavior
     - backgroundMovement
     - changeRotationOnText
     - myThirdPersonController
@@ -83,8 +85,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -309,31 +313,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5200}
     - Class: 114
-      Script: {instanceID: 5424}
+      Script: {instanceID: 5426}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5498}
+      Script: {instanceID: 5500}
     - Class: 114
-      Script: {instanceID: 5626}
+      Script: {instanceID: 5628}
     - Class: 114
-      Script: {instanceID: 5744}
+      Script: {instanceID: 5746}
     - Class: 114
-      Script: {instanceID: 5818}
-    - Class: 114
-      Script: {instanceID: 5892}
+      Script: {instanceID: 5820}
     - Class: 114
       Script: {instanceID: 5894}
     - Class: 114
-      Script: {instanceID: 5936}
+      Script: {instanceID: 5896}
     - Class: 114
-      Script: {instanceID: 6096}
+      Script: {instanceID: 5938}
     - Class: 114
-      Script: {instanceID: 6186}
+      Script: {instanceID: 6098}
     - Class: 114
-      Script: {instanceID: 6216}
+      Script: {instanceID: 6188}
     - Class: 114
-      Script: {instanceID: 6550}
+      Script: {instanceID: 6218}
+    - Class: 114
+      Script: {instanceID: 6552}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -375,7 +379,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -418,11 +428,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4844}
     - Class: 114
-      Script: {instanceID: 6032}
+      Script: {instanceID: 5232}
     - Class: 114
-      Script: {instanceID: 6384}
+      Script: {instanceID: 6034}
     - Class: 114
-      Script: {instanceID: 32562}
+      Script: {instanceID: 6386}
+    - Class: 114
+      Script: {instanceID: 137002}
+    - Class: 114
+      Script: {instanceID: 157880}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -432,6 +446,67 @@ ScriptsOnlyBuild:
     - Class: 196
       Script: {instanceID: 0}
     - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/RoomList.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1498}
+    - Class: 114
+      Script: {instanceID: 1500}
+    - Class: 114
+      Script: {instanceID: 1502}
+    - Class: 114
+      Script: {instanceID: 2484}
+    - Class: 114
+      Script: {instanceID: 2914}
+    - Class: 114
+      Script: {instanceID: 3116}
+    - Class: 114
+      Script: {instanceID: 3450}
+    - Class: 114
+      Script: {instanceID: 3692}
+    - Class: 114
+      Script: {instanceID: 3828}
+    - Class: 114
+      Script: {instanceID: 4844}
+    - Class: 114
+      Script: {instanceID: 28070}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -505,11 +580,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4690}
     - Class: 114
-      Script: {instanceID: 5818}
+      Script: {instanceID: 5820}
     - Class: 114
-      Script: {instanceID: 5958}
+      Script: {instanceID: 5960}
     - Class: 114
-      Script: {instanceID: 6032}
+      Script: {instanceID: 6034}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -885,7 +960,7 @@ ScriptsOnlyBuild:
     className: CinemachinePostProcessing
   - hash:
       serializedVersion: 2
-      Hash: 7fbf7733af6239b1755a71cb5229bd73
+      Hash: ee462cd662d1e4a106488877f8e3f8fc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ScoreCounter
@@ -1575,7 +1650,7 @@ ScriptsOnlyBuild:
     className: CinemachineIndependentImpulseListener
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: ff2bd275be65dbc62a1a18879cf3f244
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -1699,6 +1774,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: ExitGames.Demos.DemoAnimator
     className: PlayerManager
+  - hash:
+      serializedVersion: 2
+      Hash: e4a3f43559d05651250f8bac11e7c6e7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlatformMoving
   - hash:
       serializedVersion: 2
       Hash: 3165968ba45c74472d279ba04455fccb
@@ -1905,7 +1986,7 @@ ScriptsOnlyBuild:
     className: MoveCam
   - hash:
       serializedVersion: 2
-      Hash: 75abeed64165235e9ea0ee636b587bc9
+      Hash: e46c3261311ae9ce7b921dcee4abe6a4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -2085,14 +2166,21 @@ ScriptsOnlyBuild:
     className: Demo2DJumpAndRun
   - hash:
       serializedVersion: 2
-      Hash: e4a3f43559d05651250f8bac11e7c6e7
+      Hash: 1591ce4664896e0f6b12e1420b8c628e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PlatformMoving
+    className: NetworkManager2
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ZoneWalllBehavior
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Multiplayer.unity
   - Assets/Scenes/Singleplayer.unity
   - Assets/Scenes/CharacterSelection.unity
+  - Assets/Scenes/RoomList.unity
   playerPath: D:/Bibliotheken/Desktop/MyGame/MyGame-v1.6-Custom-Build-for-Malvin.apk
