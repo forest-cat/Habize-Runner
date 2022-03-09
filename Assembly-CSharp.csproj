@@ -223,6 +223,7 @@
     <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
     <Compile Include="Assets\Scripts\NetworkManager2.cs" />
     <Compile Include="Assets\Scripts\ZoneWalllBehavior.cs" />
+    <Compile Include="Assets\Scripts\BoxObstacle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

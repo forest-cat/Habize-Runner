@@ -123,7 +123,7 @@ public class NetworkManager : MonoBehaviour
     public void Spawn()
     {
         string selectedPlayerNameLoc = PlayerPrefs.GetString("selectedPlayerName");
-        PhotonNetwork.Instantiate(selectedPlayerNameLoc, new Vector3(-9.19f, -1.67f, 0), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(selectedPlayerNameLoc, new Vector3(-9.19f, -1.67f, -2), Quaternion.identity, 0);
     }
 
     public void StartGame()

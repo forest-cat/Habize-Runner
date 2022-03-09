@@ -133,14 +133,14 @@ public class PlayerController : MonoBehaviour {
         if (movement > 0 || moveRight)
         {
             state = State.run;
-            //Flips the Player into the direction he is walking
+            //Flips the Player into the direction she is walking
             transform.localScale = new Vector2(1, 1);
             transform.position += new Vector3(1, 0, 0) * Time.deltaTime * speed;
         }
         else if (movement < 0 || moveLeft)
         {
             state = State.run;
-            //Flips the Player into the direction he is walking
+            //Flips the Player into the direction she is walking
             transform.localScale = new Vector2(-1, 1);
             transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * speed;
         }
