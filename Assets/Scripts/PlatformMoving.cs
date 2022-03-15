@@ -10,6 +10,7 @@ public class PlatformMoving : MonoBehaviour
     [SerializeField] private int y2;
     [SerializeField] private int speed;
     [SerializeField] private int amount;
+    [SerializeField] private float time;
 
     private int counter1 = 0;
     private int counter2 = 0;
@@ -17,7 +18,7 @@ public class PlatformMoving : MonoBehaviour
     {
         if (counter1 <= amount)
         {
-            transform.position += new Vector3(x1, y1, 0) * Time.deltaTime * speed;
+            transform.position += new Vector3(x1, y1, 0) * time * speed;
             counter1 += 1;
         }
         
@@ -28,7 +29,7 @@ public class PlatformMoving : MonoBehaviour
 
         if(counter2 >= 0)
         {
-            transform.position += new Vector3(x2, y2, 0) * Time.deltaTime * speed;
+            transform.position += new Vector3(x2, y2, 0) * time * speed;
             counter2 -= 1;
         }
         if (counter2 == 0)

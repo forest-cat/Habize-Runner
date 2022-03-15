@@ -27,6 +27,8 @@ public class NetworkPlayer : Photon.MonoBehaviour
     private GameObject BGText;
     private bool ranOnce = false;
     [SerializeField] private LayerMask Zone;
+    private Vector2 velocity;
+    private float angularVelocity;
 
 
 
@@ -60,6 +62,8 @@ public class NetworkPlayer : Photon.MonoBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        rb.simulated = true;
         scoreCounter = GameObject.Find("ScoreCounter");
         if (!photonView.isMine)
         {
@@ -75,8 +79,7 @@ public class NetworkPlayer : Photon.MonoBehaviour
         //Debug.Log(generatingTerrain);
         if (photonView.isMine)
         {
-            rb = GetComponent<Rigidbody2D>();
-            rb.simulated = true;
+            
             GetComponent<PlayerController>().enabled = true;
             PlayerPrefs.SetString("isMaster", "false");
             PlayerPrefs.Save();
@@ -90,6 +93,7 @@ public class NetworkPlayer : Photon.MonoBehaviour
                 PhotonNetwork.room.SetCustomProperties(setValue);
                 PlayerPrefs.SetString("isMaster", "true");
                 PlayerPrefs.Save();
+                //PhotonNetwork.Instantiate("Box1", new Vector3(0.5f, -0.4f, 0), Quaternion.identity, 0);
                 //CallSetting();
                 //Debug.Log(useSeed);
 
@@ -191,7 +195,8 @@ public class NetworkPlayer : Photon.MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, this.correctPlayerPos, Time.deltaTime * 5);
             transform.rotation = Quaternion.Lerp(transform.rotation, this.correctPlayerRot, Time.deltaTime * 5);
-            Destroy(rb);
+            rb.velocity = velocity;
+            rb.angularVelocity = angularVelocity;
             //Debug.Log("Transform Position on !isMine: " + transform.position.x.ToString());
         }
 
@@ -239,6 +244,8 @@ public class NetworkPlayer : Photon.MonoBehaviour
             // We own this player: send the others our data
             stream.SendNext(transform.position);
             stream.SendNext(transform.rotation);
+            stream.SendNext(rb.velocity);
+            stream.SendNext(rb.angularVelocity);
 
         }
         else
@@ -246,6 +253,8 @@ public class NetworkPlayer : Photon.MonoBehaviour
             // Network player, receive data
             this.correctPlayerPos = (Vector3)stream.ReceiveNext();
             this.correctPlayerRot = (Quaternion)stream.ReceiveNext();
+            velocity = (Vector2)stream.ReceiveNext();
+            angularVelocity = (float)stream.ReceiveNext();
         }
     }
 }
