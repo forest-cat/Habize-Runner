@@ -15,6 +15,7 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private GameObject TogglePlayerCount;
     [SerializeField] private Toggle SelTogglePlayerCount;
     [SerializeField] private GameObject CreditsCanvas;
+    [SerializeField] private GameObject CarlandChris;
 
     public void openSettings()
     {
@@ -26,6 +27,7 @@ public class SettingsManager : MonoBehaviour
         ToggleFPS.SetActive(true);
         TogglePlayerCount.SetActive(true);
         CreditsCanvas.SetActive(true);
+        CarlandChris.SetActive(true);
     }
 
     public void closeSettings()
@@ -38,10 +40,12 @@ public class SettingsManager : MonoBehaviour
         ToggleFPS.SetActive(false);
         TogglePlayerCount.SetActive(false);
         CreditsCanvas.SetActive(false);
+        CarlandChris.SetActive(false);
     }
 
     public void Janne()
     {
+        Application.OpenURL("https://www.instagram.com/janne_s_a/");
         Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     }
 

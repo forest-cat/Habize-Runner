@@ -517,7 +517,7 @@ MonoBehaviour:
   Zone:
     serializedVersion: 2
     m_Bits: 512
-  speed: 11
+  speed: 10
   jump: 23
 --- !u!114 &-4416812502737319993
 MonoBehaviour:
@@ -560,6 +560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 5050958988051707476}
+  coll: {fileID: 0}
   Zone:
     serializedVersion: 2
     m_Bits: 512
