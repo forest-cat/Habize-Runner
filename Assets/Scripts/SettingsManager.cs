@@ -9,6 +9,7 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private GameObject PlayerNameInputField;
     [SerializeField] private GameObject SettingsButton;
     [SerializeField] private GameObject GameNameText;
+    [SerializeField] private GameObject GameVersionText;
     [SerializeField] private GameObject CloseSettings;
     [SerializeField] private GameObject ToggleFPS;
     [SerializeField] private Toggle SelToggleFPS;
@@ -23,6 +24,7 @@ public class SettingsManager : MonoBehaviour
         PlayerNameInputField.SetActive(false);
         SettingsButton.SetActive(false);
         GameNameText.SetActive(false);
+        GameVersionText.SetActive(false);
         CloseSettings.SetActive(true);
         ToggleFPS.SetActive(true);
         TogglePlayerCount.SetActive(true);
@@ -36,6 +38,7 @@ public class SettingsManager : MonoBehaviour
         PlayerNameInputField.SetActive(true);
         SettingsButton.SetActive(true);
         GameNameText.SetActive(true);
+        GameVersionText.SetActive(true);
         CloseSettings.SetActive(false);
         ToggleFPS.SetActive(false);
         TogglePlayerCount.SetActive(false);

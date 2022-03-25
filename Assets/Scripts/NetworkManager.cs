@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class NetworkManager : MonoBehaviour
     [SerializeField] private GameObject gameWonText;
     [SerializeField] private GameObject controlsUI;
     [SerializeField] private GameObject FPSCounter;
+    [SerializeField] private GameObject LeaveButton;
 
     public void BackToMenu()
     {
@@ -115,6 +117,20 @@ public class NetworkManager : MonoBehaviour
     }
 
     
+    public void BackToMenuFunction()
+    {
+        try
+        {
+            PhotonNetwork.Disconnect();
+            SceneManager.LoadScene("MainMenu");
+        }
+        catch (Exception e)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+    }
+    
+    
 
     void OnJoinedRoom()
     {
@@ -132,6 +148,8 @@ public class NetworkManager : MonoBehaviour
         PlayerPrefs.SetString("isStarted", "true");
         PlayerPrefs.Save();
         startGameButton.SetActive(false);
+        LeaveButton.SetActive(false);
+
     }
 
     void Start()
@@ -142,6 +160,7 @@ public class NetworkManager : MonoBehaviour
         endScreenButton.SetActive(false);
         gameOverText.SetActive(false);
         gameWonText.SetActive(false);
+        LeaveButton.SetActive(true);
         PlayerPrefs.SetString("isStarted", "false");
         PlayerPrefs.SetString("isDead", "false");
         PlayerPrefs.SetString("hasWon", "false");

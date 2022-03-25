@@ -796,7 +796,7 @@ ScriptsOnlyBuild:
     className: CinemachineCameraOffset
   - hash:
       serializedVersion: 2
-      Hash: fcae79d68ac4cedb10b9274962a632d1
+      Hash: 907099ecf5395bb140e36cc989e815c1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SettingsManager
@@ -1684,7 +1684,7 @@ ScriptsOnlyBuild:
     className: CinemachineIndependentImpulseListener
   - hash:
       serializedVersion: 2
-      Hash: 79143c09d14dd2d2d9997826e03c46ca
+      Hash: 9b4d351f317c24dd015b227e1134618d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -2217,4 +2217,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Singleplayer.unity
   - Assets/Scenes/CharacterSelection.unity
   - Assets/Scenes/RoomList.unity
-  playerPath: D:/Bibliotheken/Desktop/MyGame/Habize-Runner-v1.8.apk
+  playerPath: D:/Bibliotheken/Dokumente/Habize-Runner-Releases/v1.8.1/Habize-Runner-v1.8.1-Android/Habize-Runner-v1.8.1-Android.apk
