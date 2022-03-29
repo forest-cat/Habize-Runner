@@ -9,7 +9,8 @@ Is a small 2d Platformer Game i build using Csharp and Unity. Who is the last ma
 - Open Source ^^
 
 # Credits
-- [mine_ing](https://github.com/mine-ing) Textures and UI
+- [Mine_ing](https://github.com/mine-ing) Textures and UI
+- [Entropieist](https://www.instagram.com/janne_s_a/) Characters
 
 You are allowed to download it and make changes to it, but you have to give with every Upload Credits to me :)
 
