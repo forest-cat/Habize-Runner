@@ -1,5 +1,5 @@
 # Habize-Runner
-Is a small 2d Platformer Game i build using Csharp and Unity. Who is the last man standing wins or who reaches 1000 Points first... 
+Is a small 2D Platformer Game i build using Csharp and Unity. Who is the last man standing wins or who reaches 1000 Points first... 
 
 # Features
 - Multiplayer
