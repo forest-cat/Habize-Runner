@@ -19,6 +19,8 @@ public class NetworkManager : MonoBehaviour
     [SerializeField] private GameObject controlsUI;
     [SerializeField] private GameObject FPSCounter;
     [SerializeField] private GameObject LeaveButton;
+    [SerializeField] private GameObject SpecatateButton;
+    [SerializeField] private GameObject RetryButton;
 
     public void BackToMenu()
     {
@@ -149,6 +151,7 @@ public class NetworkManager : MonoBehaviour
         PlayerPrefs.Save();
         startGameButton.SetActive(false);
         LeaveButton.SetActive(false);
+        
 
     }
 
@@ -161,6 +164,8 @@ public class NetworkManager : MonoBehaviour
         gameOverText.SetActive(false);
         gameWonText.SetActive(false);
         LeaveButton.SetActive(true);
+        SpecatateButton.SetActive(false);
+        RetryButton.SetActive(false);
         PlayerPrefs.SetString("isStarted", "false");
         PlayerPrefs.SetString("isDead", "false");
         PlayerPrefs.SetString("hasWon", "false");
@@ -179,6 +184,7 @@ public class NetworkManager : MonoBehaviour
             endScreenBG.SetActive(true);
             endScreenButton.SetActive(true);
             gameOverText.SetActive(true);
+            SpecatateButton.SetActive(true);
             controlsUI.SetActive(false);
             FPSCounter.SetActive(false);
         }
@@ -190,6 +196,7 @@ public class NetworkManager : MonoBehaviour
             gameWonText.SetActive(true);
             controlsUI.SetActive(false);
             FPSCounter.SetActive(false);
+            RetryButton.SetActive(true);
         }
 
 

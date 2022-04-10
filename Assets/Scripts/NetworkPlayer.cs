@@ -131,6 +131,11 @@ public class NetworkPlayer : Photon.MonoBehaviour
             PV = GetComponent<PhotonView>();
             PV.RPC("StartGamePUN", PhotonTargets.AllBuffered);
 
+            if (PV.owner.IsMasterClient)
+            {
+                PhotonNetwork.room.IsOpen = false;
+            }
+
             ranOnce = true;
         }
 
