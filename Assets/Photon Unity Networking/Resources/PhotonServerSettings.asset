@@ -42,7 +42,7 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupItems
   - RequestForPickupTimes
-  - TaggedPlayer
   - Setting
   - StartGamePUN
+  - TaggedPlayer
   DisableAutoOpenWizard: 1

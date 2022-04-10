@@ -184,7 +184,7 @@ public class NetworkManager : MonoBehaviour
             endScreenBG.SetActive(true);
             endScreenButton.SetActive(true);
             gameOverText.SetActive(true);
-            SpecatateButton.SetActive(true);
+            //SpecatateButton.SetActive(true);
             controlsUI.SetActive(false);
             FPSCounter.SetActive(false);
         }
@@ -196,7 +196,7 @@ public class NetworkManager : MonoBehaviour
             gameWonText.SetActive(true);
             controlsUI.SetActive(false);
             FPSCounter.SetActive(false);
-            RetryButton.SetActive(true);
+            //RetryButton.SetActive(true);
         }
 
 
