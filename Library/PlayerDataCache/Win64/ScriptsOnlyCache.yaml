@@ -68,7 +68,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -88,10 +87,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -509,6 +506,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3836}
     - Class: 114
+      Script: {instanceID: 4184}
+    - Class: 114
       Script: {instanceID: 4852}
     - Class: 115
       Script: {instanceID: 0}
@@ -724,7 +723,7 @@ ScriptsOnlyBuild:
     className: LayoutElement
   - hash:
       serializedVersion: 2
-      Hash: 1591ce4664896e0f6b12e1420b8c628e
+      Hash: 9dce96ef26c45f31dccdacb8ba227bd5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager2
@@ -1684,7 +1683,7 @@ ScriptsOnlyBuild:
     className: CinemachineIndependentImpulseListener
   - hash:
       serializedVersion: 2
-      Hash: 9b4d351f317c24dd015b227e1134618d
+      Hash: d6f5aafa5b44c860bf0599eaa3f5bd18
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -2217,4 +2216,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Singleplayer.unity
   - Assets/Scenes/CharacterSelection.unity
   - Assets/Scenes/RoomList.unity
-  playerPath: D:/Bibliotheken/Dokumente/Habize-Runner-Releases/v1.8.1/Habize-Runner.exe
+  playerPath: D:/Bibliotheken/Dokumente/Habize-Runner-Releases/v1.8.2/Windows/Habize-Runner.exe

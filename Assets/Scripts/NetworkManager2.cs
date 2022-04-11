@@ -21,7 +21,7 @@ public class NetworkManager2 : MonoBehaviour
     {
         createButton.GetComponent<Button>().interactable = false;
         joinButton.GetComponent<Button>().interactable = false;
-        PhotonNetwork.ConnectUsingSettings("v1.6");
+        PhotonNetwork.ConnectUsingSettings("v1.8.2");
     }
 
     void OnConnectedToMaster()

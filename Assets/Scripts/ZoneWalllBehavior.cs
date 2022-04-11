@@ -11,6 +11,11 @@ public class ZoneWalllBehavior : MonoBehaviour
         {
             transform.position += new Vector3(1, 0, 0) * Time.deltaTime * 2;
         }
+
+        if (PlayerPrefs.GetString("hasWon") == "true" || PlayerPrefs.GetString("isDead") == "true")
+        {
+            gameObject.SetActive(false);
+        }
         
     }
 }
